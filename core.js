@@ -29,4 +29,6 @@ util.log("^ The name of the current file");
 
 //This is a function to get the memory usage and memory statistics
 util.log(v8.getHeapStatistics());
+//by adding one of the returned object names to the end of .getHeapStatistics() you can get the specific values
+//Example: v8.getHeapStatistics().malloced_memory will return the value stored at malloced_memory
 

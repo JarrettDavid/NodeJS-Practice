@@ -8,8 +8,8 @@ const waitInterval = 500;
 let currentTime = 0;
 
 const incTime = () => {
-    currentTime += waitInterval;
-    const p = Math.floor((currentTime / waitTime) * 100);
+    currentTime += waitInterval;//increments the current time
+    const p = Math.floor((currentTime / waitTime) * 100); //used for calculating the interval percentage, can use to simulate process load time
     process.stdout.clearLine(); //Used to clear the output line from the terminal
     process.stdout.cursorTo(0); //used to set the terminal position, in this case we set it to position 0
     process.stdout.write(`waiting... ${p}%`);
@@ -26,4 +26,4 @@ const timerFinished = () => {
 };
 
 const interval = setInterval(incTime, waitInterval); //setting the interval to a variable allows you to invoke the clearInterval() function
-setTimeout(timerFinished, waitTime);
+setTimeout(timerFinished, waitTime); //invokes the timerFinshed function when the wait time has been reached.

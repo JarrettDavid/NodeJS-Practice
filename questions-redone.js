@@ -1,11 +1,13 @@
 // JavaScript source code
-const readline = require("readline");
+const readLine = require("readline"); //used for reading input in from the terminal
 
-const rl = readline.createInterface({
+//used for setting up the interface for readline
+//need to tell what stream to use for input and
+//what stream to use for output
+const rl = readLine.createInterface({
     input: process.stdin,
     output: process.stdout
 });
-
 
 const questions = [
     "1. What is your name? ",
@@ -14,8 +16,8 @@ const questions = [
 ];
 
 //With coding challenges it is always good to break the objectives down
-//into functions . You mak not know how to do things just yet. Create
-//Functions for each of the prcedures that need to be completed
+//into functions . You may not know how to do things just yet. Create
+//functions for each of the prcedures that need to be completed
 
 //This function collects all of the answers for each question in an array
 //done is the callback that gets invoked which calls the callback function

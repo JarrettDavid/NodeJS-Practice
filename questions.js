@@ -1,7 +1,7 @@
 // JavaScript source code
 //process.stdout; //this is a writable string process. to send data out of your program. allow used to communicate with a process that is running
 //stdout.write(); give us control on how the output is formated in the terminal
-//process.stdin; // this is used to take input from the terminal. Allow used to communicate with a process that is running
+//process.stdin; // this is used to take input from the terminal. Allow user to communicate with a process that is running
 /*
 process.stdout.write("Hello ");
 process.stdout.write("World \n\n\n");
@@ -11,7 +11,8 @@ process.stdout.write("World \n\n\n");
 const questions = [
     "What is your name?",
     "What would you rather be doing?",
-    "What is your preferred programming language?"
+    "What is your preferred programming language?",
+    "What is the speed of a swallow?"
 ];
 
 //function for retrieving a question from array of questions
@@ -30,9 +31,9 @@ const answers = [];
 //first parameter is a data event that retrieves all data from the users keyboard after they press enter
 //second parameter is a function that is used to handle the event
 process.stdin.on('data', data => {
-    /*
-    process.stdout.write(`\n\n ${data.toString().trim()} \n\n`); //data is taken in as binary. To convert to string use the toString() function
-    process.exit(); //used for exiting a process
+   
+        process.stdout.write(`\n\n ${data.toString().trim()} \n\n`); //data is taken in as binary. To convert to string use the toString() function
+    /*     process.exit(); //used for exiting a process
     */
 
     answers.push(data.toString().trim());
@@ -45,12 +46,13 @@ process.stdin.on('data', data => {
 });
 
 process.on('exit', () => {
-    const [name, activity, lang] = answers; //array destructuring
+    const [name, activity, lang, swl] = answers; //array destructuring
     console.log(`
     Thank you for your answers.
 
-    Go ${activity} ${name} you can write ${lang} code later!!!
+    Go ${activity} ${name}, you can write ${lang} code later!!!
+
+    The flight speed of a Swallow is ${swl}. THE MORE YOU KNOW
 
     `);
 });
-
