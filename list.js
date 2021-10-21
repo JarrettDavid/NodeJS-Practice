@@ -44,9 +44,10 @@ fs.readdir("./assets", (err, files) => {
      * The function calls the waitFor function that pauses 50 ms 
      * before running the next line
      * */
+    //async function that enables asynch and prmmise behavior
     const start = async () => {
         files.forEach(async (file) => {
-            await waitFor(50);
+            await waitFor(50); //this operator waits for the promis to return
             console.log(file)
         });
     }
