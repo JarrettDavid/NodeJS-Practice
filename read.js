@@ -1,6 +1,8 @@
 const fs = require("fs");
 const util = require("util");
 
+
+util.log( new Date().getTime());
 /*
 * This is a synchronous file read that is taking place. Blocking is taking
  * place so no other actions will take place.
@@ -15,7 +17,8 @@ util.log(text);
 console.log(text);
 */
 
-/**
+/**Callbacks - functions that are passed as arguments into another function. They
+ * are second order functions 
  * 
  * Pause the system for a user specified amount of time. Promise
  * is an object used to represnt the completion of failure of an
