@@ -1,9 +1,11 @@
+/** This script file or module calls functions that allow users to rename,
+ * move and delete files from the file system*/
 const fs = require("fs");
 const util = require("util");
 
 /*The rename function has a blocking and async call. It also allows for
  * a Callback function to be used. You can use this function to do the
- * collowing:
+ * following:
  * Rename a file. In this case, change colors to colorData*/
 fs.renameSync("./assets/colors.json", "./assets/colorData.json", err => {
     if (err)
@@ -11,7 +13,7 @@ fs.renameSync("./assets/colors.json", "./assets/colorData.json", err => {
     util.log("The file rename has been completed!");
 });
 
-/*Move a file. In this case we are moving notes.md from assets to 
+/*Move a file. In this case we are moving notes.md from assets to the
  * storage-files */
 fs.renameSync("./assets/notes.md", "./storage-files/notes.md", err => {
     if (err)
