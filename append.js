@@ -8,11 +8,12 @@ const util = require("util");
 /** Here we are first reading a .JSON file into a variable, these files
  * can be called using the require function and the path and the file
  * name*/
-const colorData = require("./assets/colors.json");
+const colorData = require("./assets/colorData.json");
 
 
 /*
- 
+This is the for each that appends each one of the colors within the 
+colorData.json file to the color.md file
  */
 colorData.colorList.forEach(c => {
     fs.appendFile("./storage-files/color.md", `${c.color}: ${c.hex} \n`, err => {

@@ -3,7 +3,7 @@
 //it allows you to access and set various events 
 const events = require("events");
 
-//declaring a new event emitter. This is used for creating
+//declaring a new event emitter. This is used for raising a
 //custom events
 const emitter = new events.EventEmitter();
 
@@ -15,7 +15,9 @@ emitter.on("customEvent", (message, user) => {
 });
 
 /* This was the original test where we call the customEvent function
- *  the other parameters are the message followed by who said the message
+ *  the other parameters are the message followed by who said the message.
+ *  The raised events occur asyncrinously meaning the events are raised
+ *  when they happen.
 emitter.emit("customEvent", "Hello World", "Computer");
 emitter.emit("customEvent", "That's pretty cool huh?", "Alex");
 */
@@ -24,7 +26,7 @@ emitter.emit("customEvent", "That's pretty cool huh?", "Alex");
 //the terminal. The process ends when the user types "exit"
 process.stdin.on("data", data => {
     const input = data.toString().trim();
-    if (input === "exit") {
+    if (input === "exit" || input === "EXIT" || input === "Exit") {
         emitter.emit("customEvent", "Goodbye!", "process");
         process.exit();
     }

@@ -1,9 +1,10 @@
 {
   "ExpandedNodes": [
     "",
+    "\\lib",
     "\\www",
     "\\www\\files"
   ],
-  "SelectedNode": "\\questions-redone.js",
+  "SelectedNode": "\\read.js",
   "PreviewInSolutionExplorer": false
 }
